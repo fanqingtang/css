@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>伪标签实现面包屑右侧箭头</title>
+    <style type="text/css">
+      .wrap a:first-child::before {
+          content:">>";
+      }
+      .wrap a::after {
+          content: "/";
+      } 
+      .wrap a:last-child::after {
+          content: "";
+      } 
+    
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <a>Home</a>
+        <a>Shop</a>
+        <a>T-Shifts</a>
+    </div>
+</body>
+</html>

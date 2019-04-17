@@ -1,7 +1,5 @@
 # css 常用笔记记录
 
----
-
 ## Sticky Footer布局
 
 1. 在最外层 div 设置最小高度为 min-height: 100%,例如 footer 的 height: 60px;，就给最外层 div 里面的第二层 div 设置 padding-bottom: 60px;。然后给 footer 设置 margin-top: -60px;,代码如下。
@@ -103,4 +101,93 @@ footer {
   background: #108540;
   color: #fff;
 }
+```
+
+
+## 鼠标移动上去图片放大效果
+
+1. 要达到这个效果，需要用 __div__ 标签包裹 __img__ 标签。
+2. 要使此效果生效，需要设置父元素的 __width__ 和 __height__ ,并确保将 __overflow__ 设置为 __hidden__
+然后，你可以将任何类型的转换动画效果应用于内部图像。
+``` html 
+    <div class="wrap">
+        <img src="https://source.unsplash.com/random/400x400" class="innerWrap">
+    </div> 
+```
+``` css
+    .wrap {
+      width: 400px;
+      height: 400px;
+      overflow: hidden;
+    }
+    .innerWrap {
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .innerWrap:hover {
+      transform: scale(1.1);
+    }
+
+```
+## css夜间模式
+
+1. 如果你正在寻找一个快速的方法来应用 __夜间模式__ 皮肤到你的网站，可以使用 __invert__ 和 __hue-rotate__ 过滤器。
+   > filter: invert() 的范围是从 0 到 1,其中 1 从白色变成为黑色。
+     filter: hue-rotate() 改变元素的颜色内容,使它们或多或少保持相同的分离水平，其值范围为 __0deg__ 到 __360deg__。
+2. 通过将这些效果组合在 __body__ 标签上，可以快速试用网站夜间模式(注意，为了影响背景，你必须给它一个颜色。)
+
+``` html
+    <h1>Hi 小堂</h1>
+```
+``` css
+    *{
+        margin: 0;
+        padding: 0;
+      
+      }
+      html,body {
+          background:rgb(255,255,255);
+          height: 100%;
+          width: 100%;
+          filter: invert(.1);
+      }
+      h1 {
+          width:150px;
+          height: 60px;
+          line-height: 60px;
+          text-align: center;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          color: #108540;
+      }
+
+
+```
+## css3伪标签实现面包屑右侧箭头
+
+1. 利用伪元素 __content__ 属性，还要依赖css3提供的 __first-child__ 和 __last-child__。
+
+``` html
+    <div class="wrap">
+        <a>Home</a>
+        <a>Shop</a>
+        <a>T-Shifts</a>
+    </div>
+```
+
+``` css
+      .wrap a:first-child::before {
+          content:">>";
+      }
+      .wrap a::after {
+          content: "/";
+      } 
+      .wrap a:last-child::after {
+          content: "";
+      } 
+
 ```
