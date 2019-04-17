@@ -191,3 +191,51 @@ footer {
       } 
 
 ```
+
+## 视差图像效果
+
+1. 当一个页面的正常图像随着用户滚动而滚动时，视差图像看起来是固定的————只有通过它可见的窗口才会移动。
+
+```
+    <div class="wrap">
+        <h1>Hi 小堂</h1>
+        <div class="parallaxImg"></div>
+        <p>大家好啊，我是来自江西的小镇青年一枚。还望大家多多指教哦!</p>
+    </div>
+```
+```
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #108540;
+        }
+        .wrap {
+            height: 100vh;
+        }
+        .wrap h1 {
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            font-size: 30px;
+        }
+        .parallaxImg {
+            height: 100%;
+            background-image: url("../images/2.jpg");
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .wrap p {
+            height: 400px;
+            line-height: 400px;
+            text-align: center;
+            font-size: 20px;
+            color: #FFF;
+            text-shadow: 4px 4px 2px #206303;
+        }
+```
+ 
+
