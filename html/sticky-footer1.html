@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sticky Footer</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .wrap {
+      min-height: 100%;
+    }
+    .inner-wrap {
+      padding-bottom: 60px;
+    }
+    header {
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      background: #108540;
+      color: #fff;
+    }
+    section.content {
+      text-indent: 30px;
+      padding: 10px 0;
+      height: 1000px;
+      border: 1px solid #ccc;
+      background: #fff;
+      color: #108540;
+    }
+    footer {
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      margin-top: -60px;
+      background: #108540;
+      color: #fff;
+    }
+  </style>
+  <body>
+    <div class="wrap">
+      <div class="inner-wrap">
+        <header>Hi 我是小堂</header>
+        <section class="content">
+          <p>大家好啊，我是来自江西的小镇青年一枚。还望大家多多指教哦!</p>
+        </section>
+      </div>
+    </div>
+    <footer class="footer">这是我的底部哦</footer>
+  </body>
+</html>
