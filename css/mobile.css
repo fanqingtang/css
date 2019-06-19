@@ -1,0 +1,36 @@
+
+/* 去除 input 默认填充的背景颜色 */
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+/* 清除 input[type=number] 的默认样式 */
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* 清除移动端 a 标签等点击区域变色 */
+* {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+/* 清除移动端 input 样式 */
+input {
+    border: none;
+    -moz-appearance: none;
+    -webkit-appearance: none; /*解决ios上按钮的圆角问题*/
+    border-radius: 0; /*解决ios上输入框圆角问题*/
+    outline: medium; /*去掉鼠标点击的默认黄色边框*/
+    background-color: transparent;
+}
+
+/* 避免 ios 滑动滚动条卡顿 */
+* {
+    -webkit-overflow-scrolling: touch;
+}
