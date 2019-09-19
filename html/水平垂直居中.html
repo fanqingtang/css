@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>水平垂直居中</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .wrap {
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+    position: relative;
+  }
+  .box {
+    background-color: green;
+  }
+  /* 
+  1. 第一种垂直居中方法
+  .box.size {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+  } */
+  /*
+  2. 第二种垂直居中方法
+  .box.size {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  } */
+
+  /* 
+  3. 第三种垂直居中方法
+  .box.size {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+  }
+  */
+  /* 
+  4. 第四种垂直居中方法
+  .box {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  */
+  /* 
+  5. 第五种垂直居中方法
+  .wrap {
+    line-height: 300px;
+    text-align: center;
+    font-size: 0;
+  }
+  .box {
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: initial;
+    text-align: left;
+  }
+  */
+  /* 
+  6. 第六种垂直居中方法
+  .wrap {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .box {
+    display: inline-block;
+  }
+  */
+  /* 
+  7. 第七种垂直居中方法
+  .wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  */
+  /* 
+  8. 第八种垂直居中方法
+  .wrap {
+    display: grid;
+  }
+  .box {
+    align-self: center;
+    justify-self: center;
+  }
+  */
+
+  </style>
+</head>
+<body>
+  <section class="wrap">
+    <div class="box size">我是居中元素</div>
+  </section>
+</body>
+</html>
