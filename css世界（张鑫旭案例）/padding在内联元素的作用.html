@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>padding在内联元素的作用</title>
+  <style type="text/css">
+    section {
+      margin:  10px 0;
+    }
+    a {
+      padding: 10px;
+      background-color: #108540;
+    }
+
+    a +a::before {
+      content: '';
+      font-size: 0;
+      padding: 10px 3px 1px;
+      margin-left: 6px;
+      border-left: 1px solid black;
+    }
+    /* padding 百分比宽高比计算 */
+    .box {
+      position: relative;
+      padding: 10% 50%;
+    }
+    .box > img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+    
+    span {
+      padding: 50%;
+      font-size: 0;
+      background-color: blueviolet;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- padding 作用在内联元素的实例 -->
+  <section>
+    <a href="链接">链接一</a>
+  </section>
+  <section>
+    <a href="#">登入</a><a href="#">注册</a>
+  </section>
+
+  <!-- padding 不支持负数，但是支持百分比，百分比是相对父元素的宽度来计算的 -->
+
+  <section>
+    <div class="box">
+      <img src="./images/1.png.jpg" alt="图片">
+    </div>
+  </section>
+
+  <section>
+    <span>内有文字若干</span>
+  </section>
+</body>
+</html>

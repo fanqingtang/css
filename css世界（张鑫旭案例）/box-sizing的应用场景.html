@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>box-sizing的应用场景</title>
+  <style type="text/css">
+    .wrap {
+      margin: 20px 0;
+    }
+    #content {
+      width: 800px;
+      height: 100px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      resize: none;
+      box-sizing: border-box;
+      border-radius: 5px;
+      outline: none;
+    }
+    .container {
+      width: 280px;
+      margin: 0 auto;
+      padding: 40px 0;
+      background-color: aliceblue;
+      animation: width 2s infinite alternate;
+    }
+    @keyframes width {
+      from {
+        width: 200px;
+      }
+      to {
+        width: 280px;
+      }
+    }
+    .textarea {
+      padding: 9px 8px;
+      border: 1px solid #d0d0d5;
+      border-radius: 4px;
+      background-color: #fff;
+    }
+    .textarea > textarea {
+      width: 100%;
+      line-height: 20px;
+      padding: 0;
+      border: 0 none;
+      outline: 0 none;
+      background: none;
+      resize: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    替换元素：替换元素的特性之一就是尺寸由内部元素决定，且无论其display属性值是inline还是block 
+    替换元素包含: input, textarea, img, video , object
+   -->
+   <section class="wrap">
+    <textarea id="content" placeholder="请输入内容"></textarea>
+   </section>
+
+   <section class="wrap">
+    <div class="container">
+      <div class="textarea">
+        <textarea placeholder="请输入内容"></textarea>
+      </div>
+    </div>
+   </section>
+</body>
+</html>
